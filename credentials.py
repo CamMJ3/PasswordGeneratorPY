@@ -1,7 +1,9 @@
 credentials = []
 
 def new_credential(website, username, password):
-    credentials = {"website": website,
+    credential = {"website": website,
                   "username": username,
                   "password": password
     }
+
+    credentials.append(credential)

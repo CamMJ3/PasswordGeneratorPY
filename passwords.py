@@ -1,25 +1,24 @@
 import secrets
 import string
 
-def passGenerator(length):
+def pass_generator(length):
     letters = string.ascii_letters
     numbers = string.digits
     symbols = string.punctuation
 
     first_letter = secrets.choice(letters)
 
-    password = [first_letter]
+    password = [first_letter,
+                password.append(secrets.choice(letters)),
+                password.append(secrets.choice(numbers)),
+                password.append(secrets.choice(symbols))]
 
-    password.append(secrets.choice(letters))
-    password.append(secrets.choice(numbers))
-    password.append(secrets.choice(symbols))
+    pass_characters = letters + numbers + symbols
 
-    passCharacters = letters + numbers + symbols
-
-    for i in range (length - 3):
-        password.append(secrets.choice(passCharacters))
+    for _ in range (length - 4):
+        password.append(secrets.choice(pass_characters))
     
-    ignore_first = password[1:]
-    secrets.SystemRandom().shuffle(ignore_first)
-    complete_password = [first_letter] + ignore_first
-    return "".join(complete_password)
+    remaining = password[1:]
+    secrets.SystemRandom().shuffle(remaining)
+
+    return "".join([first_letter] + remaining)

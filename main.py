@@ -1,4 +1,4 @@
-from passwords import passGenerator
+from passwords import pass_generator
 
 def main():
     while True:
@@ -26,7 +26,7 @@ def one_password():
         print("The password must be at least 3 characters long. Try again!")
         return
     
-    newPassword = passGenerator(length)
+    newPassword = pass_generator(length)
     print("Done! Your password is: ", newPassword)
 
 def multiple_passwords():
@@ -40,7 +40,7 @@ def multiple_passwords():
     print()
 
     for i in range(num_pass):
-        newPassword = passGenerator(length)
+        newPassword = pass_generator(length)
         print(f"{i + 1}. {newPassword}")
 
 if __name__ == "__main__": 

@@ -9,9 +9,9 @@ def pass_generator(length):
     first_letter = secrets.choice(letters)
 
     password = [first_letter,
-                password.append(secrets.choice(letters)),
-                password.append(secrets.choice(numbers)),
-                password.append(secrets.choice(symbols))]
+                secrets.choice(secrets.choice(letters)),
+                secrets.choice(secrets.choice(numbers)),
+                secrets.choice(secrets.choice(symbols))]
 
     pass_characters = letters + numbers + symbols
 

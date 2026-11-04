@@ -8,13 +8,16 @@ def main():
     while True:
         print("\n- - - Credential Manager - - -")
         print("1) Add a login credential.")
-        print("2) Exit.")
+        print("2) Add a login credential.")
+        print("3) Exit.")
 
         option = int(input("\nChoose your option: "))
 
         if option == 1:
             add_credential(credentials)
         elif option == 2:
+            show_credentials(credentials)
+        elif option == 3:
             print("Exiting the program...")
             break
         else:
@@ -45,6 +48,17 @@ def add_credential(credentials):
 
     new_credential(credentials, website, user, password)
     print("Done! Your credential has been created successfully.")
+
+
+def show_credentials(credentials):
+    if get_credentials() == "[]":
+        print("No credentials have been added yet!")
+        return
+
+    for val in credentials:
+        print("Website: ", val)
+        print("Username: ", val)
+        print("Password: ", val)
 
 
 if __name__ == "__main__":

@@ -1,16 +1,21 @@
-# Credentials' protection
-credentials.json
+########## Credentials' protection ##########
 
-# Byte-compiled / optimized / DLL files
+credentials.json
+master_password.hash
+
+########## Byte-compiled / optimized / DLL files ##########
+
 __pycache__/
 *.py[cod]
 *$py.class
 
-# OS generated files
+########## OS generated files ##########
+
 .DS_Store
 Thumbs.db
 
-# Environments (if you ever use them)
+########## Environments ##########
+
 .venv/
 env/
 venv/

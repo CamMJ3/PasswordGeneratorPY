@@ -56,7 +56,7 @@ def show_credentials(credentials):
         return
 
     for i, val in enumerate(credentials, start=1):
-        print("\n____________________________\n")
+        print("\n-------------------------------------\n")
         print("---> CREDENTIAL", i)
         print("Website: ", val["website"])
         print("Username: ", val["username"])

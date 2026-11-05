@@ -8,7 +8,7 @@ def main():
     while True:
         print("\n- - - Credential Manager - - -")
         print("1) Add a login credential.")
-        print("2) Add a login credential.")
+        print("2) View current credentials.")
         print("3) Exit.")
 
         option = int(input("\nChoose your option: "))
@@ -51,14 +51,15 @@ def add_credential(credentials):
 
 
 def show_credentials(credentials):
-    if get_credentials() == "[]":
+    if not credentials:
         print("No credentials have been added yet!")
         return
 
-    for val in credentials:
-        print("Website: ", val)
-        print("Username: ", val)
-        print("Password: ", val)
+    for i, val in enumerate(credentials, start=1):
+        print("\nCredential", i)
+        print("Website: ", val["website"])
+        print("Username: ", val["username"])
+        print("Password: ", "*" * len(val["password"]))
 
 
 if __name__ == "__main__":
